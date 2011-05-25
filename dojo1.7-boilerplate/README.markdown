@@ -2,18 +2,19 @@
 
 ##About
 
-This boilerplate is a working, generic, AMD-formatted web application that has the Coweb and Dojo frameworks already configured and working. It is meant to serve as a starting point for any future applications developed for the Coweb frameworks using Dojo 1.7+ so that minimal or no setup is required.
+This boilerplate is a working, generic, AMD-formatted web application that has the OpenCoweb, RequireJS, and Dojo frameworks already configured and working. It is meant to serve as a starting point for any future applications developed for the OpenCoweb framework using Dojo 1.7 with RequireJS so that minimal or no setup is required.
 
 ##Quick Start
 
 1. If you haven't already, follow [these instructions](http://opencoweb.org/ocwdocs/tutorial/install.html) to deploy a Coweb instance.
-2. Clone repository:
-```
+2. Clone repository and initialize Dojo submodules in the coweb deployment directory:
+```console
 $ git clone git@github.com:bouchon/coweb-dojo1.7-boilerplate.git
+$ git submodules init
+$ git submodules update
 ```
-3. Download a nightly build of Dojo [here](http://archive.dojotoolkit.org/nightly/) and unzip.
-4. Place ```dojo/``` , ```dijit/``` , and ```dojox/``` inside the root of the boilerplate.
-5. Open in a browser to test it out.
+3. Start a coweb server instance.
+4. Visit the app in your browser.
 
 ##A Brief Tour
 
