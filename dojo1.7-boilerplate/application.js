@@ -6,18 +6,13 @@
 define(
 	//App-specific dependencies
 	[
+	    'dojo',
 		'coweb/main',
 		'dojo/parser',
 		'dijit/layout/BorderContainer',
 		'dijit/layout/ContentPane'
 	],
-
-	function(
-		coweb,
-		parser,
-		BorderContainer,
-		ContentPane) {
-		
+	function(dojo, coweb, parser) {
 		// parse declarative widgets
 	   	parser.parse(dojo.body());
 
