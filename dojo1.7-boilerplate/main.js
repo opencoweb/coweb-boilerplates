@@ -1,5 +1,5 @@
 //
-// Bootstrap file. 
+// Main app config file. 
 //
 // Copyright (c) The Dojo Foundation 2011. All Rights Reserved.
 //
