@@ -11,11 +11,8 @@ This boilerplate is a working, generic, AMD-formatted web application that has t
 
 ```console
 $ git clone git@github.com:opencoweb/coweb-boilerplates
-
 $ cd coweb-boilerplates/dojo1.7-boilerplate
-
 $ git submodule init
-
 $ git submodule update
 ```
 3. Start a coweb server instance.
