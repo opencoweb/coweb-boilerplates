@@ -1,0 +1,9 @@
+[submodule "dojo1.7-boilerplate/dojo"]
+	path = dojo1.7-boilerplate/dojo
+	url = https://github.com/dojo/dojo.git
+[submodule "dojo1.7-boilerplate/dijit"]
+	path = dojo1.7-boilerplate/dijit
+	url = https://github.com/dojo/dijit.git
+[submodule "dojo1.7-boilerplate/dojox"]
+	path = dojo1.7-boilerplate/dojox
+	url = https://github.com/dojo/dojox.git
