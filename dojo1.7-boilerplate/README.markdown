@@ -8,10 +8,14 @@ This boilerplate is a working, generic, AMD-formatted web application that has t
 
 1. If you haven't already, follow [these instructions](http://opencoweb.org/ocwdocs/tutorial/install.html) to deploy a Coweb instance.
 2. Clone repository and initialize Dojo submodules in the coweb deployment directory:
+
 ```console
 $ git clone git@github.com:opencoweb/coweb-boilerplates
+
 $ cd coweb-boilerplates/dojo1.7-boilerplate
+
 $ git submodule init
+
 $ git submodule update
 ```
 3. Start a coweb server instance.
