@@ -9,9 +9,10 @@ This boilerplate is a working, generic, AMD-formatted web application that has t
 1. If you haven't already, follow [these instructions](http://opencoweb.org/ocwdocs/tutorial/install.html) to deploy a Coweb instance.
 2. Clone repository and initialize Dojo submodules in the coweb deployment directory:
 ```console
-$ git clone git@github.com:bouchon/coweb-dojo1.7-boilerplate.git
-$ git submodules init
-$ git submodules update
+$ git clone git@github.com:opencoweb/coweb-boilerplates
+$ cd coweb-boilerplates/dojo1.7-boilerplate
+$ git submodule init
+$ git submodule update
 ```
 3. Start a coweb server instance.
 4. Visit the app in your browser.
@@ -29,9 +30,13 @@ The following files are simply part of the configuration and shouldn't be modifi
 
 * ```i18n.js``` : the current Dojo i18n.js isn't supported by requireJS and AMD loading in general, so this i18n script file is AMD-specific plugin that allows for internationalization.
 
-##Development Notes
+##Important Development Notes
 
-In the bootstrap file, ```main.js``` , the global dependency 'org/cometd' should be uncommented only if you are using a [Developer's Setup](https://github.com/opencoweb/coweb/wiki/Developer-Setup).
+* In the bootstrap file, ```main.js``` , the global dependency 'org/cometd' should be uncommented only if you are using a [Developer's Setup](https://github.com/opencoweb/coweb/wiki/Developer-Setup).
+* The file ```dojo/i18n.js``` currently has a bug (Dojo's, not ours) and needs to be patched before this boilerplate will function: on line 148, the change the following line from:
+```return require.toAbsMid(mid);```
+to:
+```return mid;```
 
 ##License
 
