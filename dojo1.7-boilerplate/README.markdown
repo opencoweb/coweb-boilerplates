@@ -25,11 +25,7 @@ The structure of this directory is extremely straight forward. The following fil
 * ```index.html``` : serves as the main html file of the application
 * ```application.js``` : serves as the main javascript file of the application
 * ```application.css``` : serves as the main CSS of the application
-* ```main.js``` : serves as the bootstrap file for the application (holds dependency list)
-
-The following files are simply part of the configuration and shouldn't be modified:
-
-* ```i18n.js``` : the current Dojo i18n.js isn't supported by requireJS and AMD loading in general, so this i18n script file is AMD-specific plugin that allows for internationalization.
+* ```main.js``` : serves as the bootstrap file for the application, configures globals
 
 ##Important Development Notes
 
