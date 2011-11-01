@@ -30,17 +30,6 @@ The structure of this directory is extremely straight forward. The following fil
 ##Important Development Notes
 
 * In the bootstrap file, ```main.js``` , the global dependency 'org/cometd' should be uncommented only if you are using a [Developer's Setup](https://github.com/opencoweb/coweb/wiki/Developer-Setup).
-* The file ```dojo/i18n.js``` currently has a bug (Dojo's, not ours) and needs to be patched before this boilerplate will function: on line 148, the change the following line from:
-
-```
-return require.toAbsMid(mid);
-```
-
-to:
-
-```
-return mid;
-```
 
 ##License
 
