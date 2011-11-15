@@ -18,6 +18,7 @@ define(
 
 	   	// get a session instance
 	    var sess = coweb.initSession();
+	    
 	    // do the prep
 	    sess.prepare();
 	}

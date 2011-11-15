@@ -2,18 +2,15 @@
 
 ##About
 
-This boilerplate is a working, generic, AMD-formatted web application that has the OpenCoweb, RequireJS, and Dojo frameworks already configured and working. It is meant to serve as a starting point for any future applications developed for the OpenCoweb framework using Dojo 1.7 with RequireJS so that minimal or no setup is required.
+This boilerplate is a working, generic, AMD-formatted web application that has the OpenCoweb and Dojo frameworks already configured and working. It is meant to serve as a starting point for any future applications developed for the OpenCoweb framework using Dojo 1.7 AMD so that minimal or no setup is required.
 
 ##Quick Start
 
 1. If you haven't already, follow [these instructions](http://opencoweb.org/ocwdocs/tutorial/install.html) to deploy a Coweb instance.
-2. Clone repository and initialize Dojo submodules in the coweb deployment directory:
+2. Clone repository:
 
 ```console
 $ git clone git@github.com:opencoweb/coweb-boilerplates
-$ cd coweb-boilerplates/dojo1.7-boilerplate
-$ git submodule init
-$ git submodule update
 ```
 3. Start a coweb server instance.
 4. Visit the app in your browser.
@@ -26,10 +23,6 @@ The structure of this directory is extremely straight forward. The following fil
 * ```application.js``` : serves as the main javascript file of the application
 * ```application.css``` : serves as the main CSS of the application
 * ```main.js``` : serves as the bootstrap file for the application, configures globals
-
-##Important Development Notes
-
-* In the bootstrap file, ```main.js``` , the global dependency 'org/cometd' should be uncommented only if you are using a [Developer's Setup](https://github.com/opencoweb/coweb/wiki/Developer-Setup).
 
 ##License
 
