@@ -1,0 +1,9 @@
+*.class
+*.war
+*.jar
+.DS_Store
+target/
+.classpath
+.project
+.settings/
+tmp/
