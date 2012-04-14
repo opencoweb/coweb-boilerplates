@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="build" basedir="." default="build">
+	<property name="dojo.version" value="1.7.2"/>
+	<property name="zazl.version" value="0.2.3"/>
+	<property name="dojo.src.zip" value="dojo-release-${dojo.version}-src.zip"/>
+	<property name="dojo.zip" value="dojo-release-${dojo.version}.zip"/>
+	<property name="zazl.zip" value="optimizer-v${zazl.version}.zip"/>
+	<property name="dojo.src.url" value="http://download.dojotoolkit.org/release-${dojo.version}/${dojo.src.zip}"/>
+	<property name="dojo.url" value="http://download.dojotoolkit.org/release-${dojo.version}/${dojo.zip}"/>
+	<property name="zazl.url" value="http://www.zazl.org/downloads/${zazl.version}/${zazl.zip}"/>
+	<property name="tmp.path" value="${basedir}/tmp"/>
+	<property name="work.path" value="${tmp.path}/work"/>
+	<property name="webapp.path" value="${basedir}/src/main/webapp"/>
+	<property name="webapplib.path" value="${webapp.path}/lib"/>
+
+	<target name="downloadDojoSrc" unless="dojo.src.present">
+		<get src="${dojo.src.url}" dest="${tmp.path}/${dojo.src.zip}"/>
+	</target>
+
+	<target name="downloadDojo" unless="dojo.present">
+		<get src="${dojo.url}" dest="${tmp.path}/${dojo.zip}"/>
+	</target>
+
+	<target name="downloadZazl" unless="zazl.present">
+		<get src="${zazl.url}" dest="${tmp.path}/${zazl.zip}"/>
+	</target>
+	
+	<target name="doCopy" unless="copy.complete">
+		<unzip src="${tmp.path}/${dojo.src.zip}" dest="${work.path}" overwrite="false"/>
+		<unzip src="${tmp.path}/${dojo.zip}" dest="${work.path}" overwrite="false"/>
+		<unzip src="${tmp.path}/${zazl.zip}" dest="${work.path}/optimizer" overwrite="false"/>
+		
+		<move file="${work.path}/dojo-release-${dojo.version}-src/dojo" todir="${webapplib.path}"/>
+		<move file="${work.path}/dojo-release-${dojo.version}-src/dijit" todir="${webapplib.path}"/>
+		<move file="${work.path}/dojo-release-${dojo.version}-src/dojox" todir="${webapplib.path}"/>
+		<move file="${work.path}/optimizer/WEB-INF/classes" todir="${webapp.path}/WEB-INF/"/>
+		<move file="${work.path}/optimizer/WEB-INF/lib" todir="${webapp.path}/WEB-INF/"/>
+		<move file="${work.path}/optimizer/zazl.js" todir="${webapp.path}/lib/zazl/"/>
+		
+		<delete dir="${webapplib.path}/dijit/themes"/>
+		<move file="${work.path}/dojo-release-${dojo.version}/dijit/themes" todir="${webapplib.path}/dijit/"/>
+		<delete dir="${webapplib.path}/dojox/mobile/themes"/>
+		<move file="${work.path}/dojo-release-${dojo.version}/dojox/mobile/themes" todir="${webapplib.path}/dojox/mobile/"/>
+	</target>
+
+	<target name="build">
+		<mkdir dir="${tmp.path}"/>
+		<mkdir dir="${work.path}"/>
+		
+		<available file="${tmp.path}/${dojo.src.zip}" property="dojo.src.present"/>
+		<available file="${tmp.path}/${dojo.zip}" property="dojo.present"/>
+		<available file="${tmp.path}/${zazl.zip}" property="zazl.present"/>
+		
+		<antcall target="downloadDojoSrc"/>
+		<antcall target="downloadDojo"/>
+		<antcall target="downloadZazl"/>
+
+		<available file="${webapplib.path}" property="copy.complete"/>
+		
+		<antcall target="doCopy"/>
+	</target>
+		
+	<target name="clean">
+		<delete dir="${work.path}"/>
+		<delete dir="${webapplib.path}"/>
+		<delete dir="${webapp.path}/WEB-INF/classes"/>
+		<delete dir="${webapp.path}/WEB-INF/lib"/>
+	</target>
+</project>

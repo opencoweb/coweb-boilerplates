@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<context-param>
+	    <param-name>compressJS</param-name>
+	    <param-value>false</param-value>
+	</context-param>
+	<context-param>
+	    <param-name>jsHandlerType</param-name>
+	    <param-value>zazl</param-value>
+	</context-param>
+    <servlet>
+        <description/>
+        <display-name>JSServlet</display-name>
+        <servlet-name>JSServlet</servlet-name>
+        <servlet-class>org.dojotoolkit.optimizer.servlet.JSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>cometd</servlet-name>
+        <servlet-class>org.cometd.server.CometdServlet</servlet-class>
+        <init-param>
+            <param-name>logLevel</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>timeout</param-name>
+            <param-value>30000</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jsonDebug</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported> 
+        <!-- 
+        To use async-supported in a servlet 3.0 compliant container, 
+        uncomment the following tag:
+        
+        <async-supported>true</async-supported> 
+        
+        and change the web-app tag of this document to:
+        
+        <web-app xmlns="http://java.sun.com/xml/ns/javaee"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+                 version="3.0">
+        -->
+    </servlet>
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <servlet-class>org.coweb.servlet.AdminServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>JSServlet</servlet-name>
+        <url-pattern>/_javascript/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cometd</servlet-name>
+        <url-pattern>/cometd/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin/*</url-pattern>
+    </servlet-mapping>
+</web-app>
