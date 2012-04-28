@@ -30,9 +30,24 @@
 		<unzip src="${tmp.path}/${dojo.zip}" dest="${work.path}" overwrite="false"/>
 		<unzip src="${tmp.path}/${zazl.zip}" dest="${work.path}/optimizer" overwrite="false"/>
 		
-		<move file="${work.path}/dojo-release-${dojo.version}-src/dojo" todir="${webapplib.path}"/>
-		<move file="${work.path}/dojo-release-${dojo.version}-src/dijit" todir="${webapplib.path}"/>
-		<move file="${work.path}/dojo-release-${dojo.version}-src/dojox" todir="${webapplib.path}"/>
+		<move todir="${webapplib.path}/dojo">
+			<fileset dir="${work.path}/dojo-release-${dojo.version}-src/dojo">
+				<exclude name="**/tests/**"/>
+				<exclude name="**/demos**"/>
+			</fileset>	
+		</move>
+		<move todir="${webapplib.path}/dijit">
+			<fileset dir="${work.path}/dojo-release-${dojo.version}-src/dijit">
+				<exclude name="**/tests/**"/>
+				<exclude name="**/demos**"/>
+			</fileset>	
+		</move>
+		<move todir="${webapplib.path}/dojox">
+			<fileset dir="${work.path}/dojo-release-${dojo.version}-src/dojox">
+				<exclude name="**/tests/**"/>
+				<exclude name="**/demos**"/>
+			</fileset>	
+		</move>
 		<move file="${work.path}/optimizer/WEB-INF/classes" todir="${webapp.path}/WEB-INF/"/>
 		<move file="${work.path}/optimizer/WEB-INF/lib" todir="${webapp.path}/WEB-INF/"/>
 		<move file="${work.path}/optimizer/zazl.js" todir="${webapp.path}/lib/zazl/"/>
