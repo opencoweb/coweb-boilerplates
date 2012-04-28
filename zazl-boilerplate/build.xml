@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="build" basedir="." default="build">
 	<property name="dojo.version" value="1.7.2"/>
-	<property name="zazl.version" value="0.2.3"/>
+	<property name="zazl.version" value="0.3.0"/>
 	<property name="dojo.src.zip" value="dojo-release-${dojo.version}-src.zip"/>
 	<property name="dojo.zip" value="dojo-release-${dojo.version}.zip"/>
 	<property name="zazl.zip" value="optimizer-v${zazl.version}.zip"/>
