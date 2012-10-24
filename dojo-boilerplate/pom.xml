@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-    <modelVersion>4.0.0</modelVersion>
     <groupId>org.opencoweb.cowebx</groupId>
+    <modelVersion>4.0.0</modelVersion>
     <artifactId>dojo-boilerplate</artifactId>
-    <version>1.0</version>
+
+    <name>OpenCoweb Extras :: Dojo Boilerplate</name>
     <packaging>war</packaging>
+	<description>Boilerplate code using Dojo for the OpenCoweb Framework</description>
+    <version>1.0</version>
+
+    <url>http://opencoweb.org</url>
+    <inceptionYear>2011</inceptionYear>
+    <organization>
+        <name>The Dojo Foundation</name>
+        <url>http://dojofoundation.org</url>
+    </organization>
+    
+    <licenses>
+        <license>
+            <name>The New BSD License</name>
+            <url>http://www.opensource.org/licenses/bsd-license.html</url>
+        </license>
+        <license>
+            <name>The Academic Free License, v. 2.1</name>
+            <url>http://en.wikipedia.org/wiki/Academic_Free_License</url>
+        </license>
+    </licenses>
+    
+    <developers>
+        <developer>
+            <id>parente</id>
+            <name>Peter Parente</name>
+            <email>pparent@us.ibm.com</email>
+            <organization>IBM Corporation</organization>
+        </developer>
+        <developer>
+            <id>bpburns</id>
+            <name>Brian Burns</name>
+            <email>bburns@us.ibm.com</email>
+            <organization>IBM Corporation</organization>
+        </developer>
+        <developer>
+            <id>vinomaster</id>
+            <name>Dan Gisolfi</name>
+            <email>gisolfi@us.ibm.com</email>
+            <organization>IBM Corporation</organization>
+        </developer>
+    </developers>
+    
+    <scm>
+        <connection>scm:git:git@github.com:opencoweb/coweb-boilerplates.git</connection>
+        <developerConnection>scm:git:git@github.com:opencoweb/coweb-boilerplates.git</developerConnection>
+        <url>git@github.com:opencoweb/coweb-boilerplates.git</url>
+    </scm>
 
     <properties>
         <coweb-version>0.8.3.1</coweb-version>
+        <cowebx-widgets-version>0.8.3.1</cowebx-widgets-version>
     </properties>
 
     <build>
@@ -56,6 +105,35 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.1</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
@@ -71,7 +149,7 @@
         <dependency>
             <groupId>org.opencoweb</groupId>
             <artifactId>coweb-javascript</artifactId>
-            <version>${coweb-version}</version>
+            <version>${cowebx-widgets-version}</version>
             <type>war</type>
         </dependency>
     </dependencies>
