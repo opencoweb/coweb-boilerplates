@@ -5,30 +5,30 @@
 // Copyright (c) The Dojo Foundation 2011. All Rights Reserved.
 //
 var dojoConfig = {
-    baseUrl: '/dojo-boilerplate',
+    baseUrl: "/dojo-boilerplate",
     async:true,
 
     paths : {
-        coweb : 'lib/coweb',
-        cowebx: 'lib/cowebx',
-        org : 'lib/org',
-        colist : 'js'
+        coweb : "lib/coweb",
+        cowebx: "lib/cowebx",
+        org : "lib/org",
+        "dojo-boilerplate" : "js"
     },
 
     packages:[{
-        name: 'dojo',
+        name: "dojo",
         location:"http://ajax.googleapis.com/ajax/libs/dojo/1.8.0/dojo",
-        main:'main'
+        main:"main"
     },
     {
-        name: 'dijit',
+        name: "dijit",
         location:"http://ajax.googleapis.com/ajax/libs/dojo/1.8.0/dijit",
-        main:'main'
+        main:"main"
     },
     {
-        name: 'dojox',
+        name: "dojox",
         location:"http://ajax.googleapis.com/ajax/libs/dojo/1.8.0/dojox",
-        main:'main'
+        main:"main"
     }]
 };
 
