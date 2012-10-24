@@ -1,8 +1,11 @@
-#Coweb + Dojo1.7 Boilerplate
+#Coweb + Dojo Boilerplate
 
 ##About
 
-This boilerplate is a working, generic, AMD-formatted web application that has the OpenCoweb and Dojo frameworks already configured and working. It is meant to serve as a starting point for any future applications developed for the OpenCoweb framework using Dojo 1.7 AMD so that minimal or no setup is required.
+This boilerplate is a working, generic, AMD-formatted web application that has
+the OpenCoweb and Dojo frameworks already configured and working. It is meant to
+serve as a starting point for any future applications developed for the
+OpenCoweb framework using Dojo 1.8 AMD so that minimal or no setup is required.
 
 ##Quick Start
 
@@ -17,7 +20,8 @@ $ git clone git@github.com:opencoweb/coweb-boilerplates
 
 ##A Brief Tour
 
-The structure of this directory is extremely straight forward. The following files are all you need to worry about when developing:
+The structure of this directory is extremely straight forward. The following
+files are all you need to worry about when developing:
 
 * ```index.html``` : serves as the main html file of the application
 * ```application.js``` : serves as the main javascript file of the application

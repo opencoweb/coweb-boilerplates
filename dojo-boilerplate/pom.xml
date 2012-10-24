@@ -3,12 +3,12 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.opencoweb.cowebx</groupId>
-    <artifactId>dojo1.7-boilerplate</artifactId>
+    <artifactId>dojo-boilerplate</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
     <properties>
-        <coweb-version>0.8.1</coweb-version>
+        <coweb-version>0.8.3.1</coweb-version>
     </properties>
 
     <build>
@@ -31,7 +31,7 @@
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webAppConfig>
-                        <contextPath>/dojo1.7-boilerplate</contextPath>
+                        <contextPath>/dojo-boilerplate</contextPath>
                     </webAppConfig>
                 </configuration>
             </plugin>
