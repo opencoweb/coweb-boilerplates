@@ -1,3 +1,4 @@
-var cowebConfig = { adminUrl: './admin', cacheState : true };
 
-require(["application"]);
+var cowebConfig = { adminUrl: './admin', cacheState : true };
+require(["dojo-boilerplate/application"]);
+
