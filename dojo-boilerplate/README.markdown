@@ -9,7 +9,9 @@ OpenCoweb framework using Dojo 1.8 AMD so that minimal or no setup is required.
 
 ##Quick Start
 
-1. If you haven't already, follow [these instructions](http://opencoweb.org/ocwdocs/tutorial/install.html) to deploy a Coweb instance.
+1. If you haven't already, follow
+[these instructions](http://opencoweb.org/ocwdocs/tutorial/install.html) to
+deploy a Coweb instance.
 2. Clone repository:
 
 ```console
@@ -17,6 +19,11 @@ $ git clone git@github.com:opencoweb/coweb-boilerplates
 ```
 3. Start a coweb server instance.
 4. Visit the app in your browser.
+
+##Deploying
+
+See the [tutorial](http://opencoweb.org/ocwdocs/tutorial/install.html) for more
+information on installing and running these boilerplates.
 
 ##A Brief Tour
 
